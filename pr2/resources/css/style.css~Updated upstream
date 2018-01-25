@@ -1,0 +1,164 @@
+ @import url('https://fonts.googleapis.com/css?family=Noto+Sans|Open+Sans');
+
+body
+{
+    margin: 0;
+    background-color: #542437;
+    font-family: 'Open Sans', sans-serif;
+
+    color: #ECD078;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Noto Sans', serif;
+}
+
+main 
+{
+    position: relative;
+    background-color: #53777A;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    width: 600px;
+
+    height: 700px;
+
+    margin: 0 auto 0 auto;
+}
+
+header
+{
+    float: none;
+    display: inherit;
+    width: 100%;
+    height: 150px;
+
+    background: url(../images/bg.png) no-repeat center center fixed;
+    background-size: cover
+}
+
+header > *
+{
+    padding: 0 10px;
+}
+
+section
+{
+    float: none;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+
+    width: 100%;
+    height: 550px;
+}
+
+section > *
+{
+    flex: 1 100%;
+    padding: 0 10px;
+}
+
+section > div.task-list
+{
+    overflow-y: scroll;
+
+    border-top-style: solid;
+    border-top-color: #96E14C;
+
+    border-bottom-style: solid;
+    border-bottom-color: #96E14C;
+
+    border-radius: 25px;
+}
+
+p
+{
+    float: none;
+}
+
+h1.greeting, h1.date
+{
+    font-size: 1.25rem;
+}
+
+h1.greeting 
+{
+    flex-shrink: 2;
+    width: 100%;
+    align-self: flex-start;     /* Vertical */
+    justify-self: flex-end;     /* Horizontal */
+}
+
+h1.date 
+{
+    color: #C02942;
+    text-align: right;
+    width: 100%;
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+
+/* ---- TASKS ---- */
+
+p.task-counter, p.tasks
+{
+    flex-shrink: 5;
+}
+
+ul.task-list-style
+{
+    list-style-type: none;
+}
+
+/* ---- FORM ---- */
+
+div.add-task-style
+{
+    flex-shrink: 5;
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+
+div.add-task-style > *
+{
+    margin: 5px;
+    float: left;
+}
+
+div.input-group-button > input.button
+{
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+li
+{
+    flex-direction: row;
+    width: 100%;
+}
+
+li.active 
+{
+    color: #81E541;
+}
+
+div.dropdown-pane
+{
+    color: #542437;
+}
+
+/* --- HELPER CLASSES ---- */
+.hidden
+{
+    display: hidden;
+}
+
+.active
+{
+    display: block;
+}

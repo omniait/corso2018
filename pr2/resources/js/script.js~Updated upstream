@@ -1,0 +1,113 @@
+var task_array;
+var task_el;
+var total_task_el;
+
+var name;
+
+var list_btn;
+var active_task_drop;
+
+function init()
+{
+    //console.log("hello world");
+    name = "Spongebob";
+    greeting();
+    
+    assign_date();
+
+    task_el = document.getElementById("task-list");
+    console.log("taskList: ", task_el);
+
+    list_btn = document.getElementById("act-dropdown-btn");
+    active_task_drop = document.getElementById("active-task");
+    total_task_el = document.getElementById("total");
+
+    task_array = new Array();
+}
+
+function greeting()
+{
+    document.getElementById("name").innerHTML = name;
+}
+
+function assign_date()
+{
+    var d = new Date();
+
+    var day = d.getDate();
+
+    day = prefix_it(day);
+
+    var month = d.getMonth();
+    month += 1;
+
+    month = prefix_it(month);
+
+    var year = d.getFullYear();
+
+    /*
+    var weekday = d.getDay();
+    var name_of_weekday = conv_weekday(weekday);
+    */
+
+    var name_of_weekday = conv_weekday(d.getDay());
+
+    document.getElementById("today").innerHTML = name_of_weekday + " " + day + "th/" + month + "/" + year; 
+}
+
+function prefix_it(date_number)
+{
+    if (date_number <= 10) 
+        date_number = "0" + date_number;   
+    
+    return date_number;
+}
+
+function conv_weekday(weekday)
+{
+    var name_of_weekday;
+
+    switch (weekday) 
+    {
+        case 0:
+            name_of_weekday = "Sunday";
+            break;
+        case 1:
+            name_of_weekday = "Monday";
+            break;
+        case 2:
+            name_of_weekday = "Tuesday";
+            break;
+        case 3:
+            name_of_weekday = "Wednesday";
+            break;
+        case 4:
+            name_of_weekday = "Thursday";
+            break;
+        case 5:
+            name_of_weekday = "Friday";
+            break;
+        case 6:
+            name_of_weekday = "Saturday";
+            break;
+
+        default:
+            break;
+    }
+
+    return name_of_weekday;
+}
+
+function add_task()
+{
+    var input_text = document.getElementById("task-name").value;
+    console.log("inputText: ", input_text);
+
+    task_array.push(input_text);
+    console.log(task_array);
+    
+    tl = task_array.length;
+    task_el.innerHTML += "<li " + "id ='task-" + tl + "'>" + input_text + "</li>";
+
+    total_task_el.innerHTML = tl;
+}
